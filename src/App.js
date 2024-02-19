@@ -97,7 +97,7 @@ function App() {
         <div className="w-full h-[55px] flex justify-center   text-white text-6xl font-bold">
           {currentDate}
         </div>
-        <div className="w-full h-[85px] flex justify-center  text-white text-7xl font-bold">
+        <div className="w-full h-[85px] flex justify-center   text-white text-7xl font-bold">
           {`${currentPeriod} ${currentTime}`}
         </div>
 
@@ -112,7 +112,7 @@ function App() {
           />
         </div>
 
-        <div className="absolute bottom-16 flex justify-center items-center">
+        <div className="w-full h-[400px] flex justify-center items-center">
           {weatherData && (
             <div className=" bg-white text-xl w-[600px] h-[350px] rounded-lg py-2">
               <div className=" px-4 font-bold text-5xl flex justify-between items-center">
