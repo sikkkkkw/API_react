@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Tawk from "./Tawk";
 import axios from "axios";
 import WeatherDescKo from "./WeatherDescKo";
-import Morning from "./images/Morning.png";
+// import {Morning} from "./images/Morning.png";
 // import { MdLocationCity } from "react-icons/md";
 // import { SiUnitednations } from "react-icons/si";
 // import { FaTemperatureHalf } from "react-icons/fa6";
@@ -63,13 +63,13 @@ function App() {
   const getTimeOfDay = () => {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) {
-      return Morning;
+      return "새벽";
     } else if (hour >= 12 && hour < 18) {
-      return Morning;
+      return "아침";
     } else if (hour >= 18 && hour < 22) {
-      return Morning;
+      return "오후";
     } else {
-      return Morning;
+      return "밤";
     }
   };
 
@@ -93,11 +93,11 @@ function App() {
       <div className=" fixed top-0 w-full h-14 flex  justify-center items-center font-semibold text-2xl  bg-purple-700 z-20">
         세계 현재 날씨
       </div>
-      <div className="relative bg-purple-600 w-full h-[100vh] flex justify-center items-center flex-col">
-        <div className="absolute top-[240px] text-white text-6xl font-bold">
+      <div className=" bg-purple-600 w-full h-[100vh] flex justify-center items-center flex-col">
+        <div className="w-full h-[55px] flex justify-center   text-white text-6xl font-bold">
           {currentDate}
         </div>
-        <div className="absolute top-[320px] text-white text-7xl font-bold">
+        <div className="w-full h-[85px] flex justify-center  text-white text-7xl font-bold">
           {`${currentPeriod} ${currentTime}`}
         </div>
 
