@@ -94,7 +94,7 @@ function App() {
         세계 현재 날씨
       </div>
       <div className=" bg-purple-600 w-full h-[100vh] flex justify-center items-center flex-col">
-        <div className="w-full h-[55px] flex justify-center   text-white text-6xl font-bold">
+        <div className="w-full h-[55px] mt-[150px] flex justify-center   text-white text-6xl font-bold">
           {currentDate}
         </div>
         <div className="w-full h-[85px] flex justify-center   text-white text-7xl font-bold">
@@ -103,7 +103,7 @@ function App() {
 
         <div className="flex justify-center items-center">
           <input
-            className="w-[600px] h-[70px] text-center text-4xl font-semibold rounded-lg"
+            className="w-[600px] h-[70px] my-4 text-center text-4xl font-semibold rounded-lg"
             placeholder="도시를 입력하세요.(seoul)"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -112,10 +112,10 @@ function App() {
           />
         </div>
 
-        <div className="w-full h-[400px] flex justify-center items-center">
+        <div className="w-full h-[330px] flex justify-center items-center">
           {weatherData && (
-            <div className=" bg-white text-xl w-[600px] h-[350px] rounded-lg py-2">
-              <div className=" px-4 font-bold text-5xl flex justify-between items-center">
+            <div className=" bg-white text-xl w-[600px] h-[330px] rounded-lg py-1">
+              <div className=" px-2 font-bold text-5xl flex justify-between items-center">
                 <div>
                   <img
                     src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
@@ -126,22 +126,22 @@ function App() {
                 </div>
                 <div className="text-2xl py-6">{weatherData.name}</div>
               </div>
-              <div className="px-4  text-2xl font-bold flex  justify-start py-2">
+              <div className="px-1  text-2xl font-bold flex  justify-start py-2">
                 {weatherData.weatherDescription}
               </div>
-              <div className=" px-4 font-bold text-2xl flex justify-between items-center py-2">
+              <div className=" px-1 font-bold text-2xl flex justify-between items-center py-2">
                 <div>습도 :</div>
                 <div className="text-2xl">{weatherData.humidity}%</div>
               </div>
-              <div className=" px-4 font-bold text-2xl flex justify-between items-center py-3">
+              <div className=" px-1 font-bold text-2xl flex justify-between items-center py-2">
                 <div>최대 자외선 지수 :</div>
                 <div className="text-2xl">{weatherData.uvIndex}</div>
               </div>
-              <div className=" px-4 font-bold text-2xl flex justify-between items-center py-2">
+              <div className=" px-1 font-bold text-2xl flex justify-between items-center py-2">
                 <div>위도 :</div>
                 <div className="text-2xl">{weatherData.latitude}</div>
               </div>
-              <div className=" px-4 font-bold text-2xl flex justify-between items-center py-3">
+              <div className=" px-1 font-bold text-2xl flex justify-between items-center py-2">
                 <div>경도 :</div>
                 <div className="text-2xl">{weatherData.longitude}</div>
               </div>
