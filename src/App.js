@@ -107,14 +107,17 @@ function App() {
           />
         </div>
         <div className="absolute bottom-[20px] flex justify-center items-center">
-  {weatherData && (
-    <div className="text-xl w-[400px] border-2 p-4 rounded-lg bg-white text-gray-800  ">
+  {weatherData && ( 
+    <div className="text-xl w-[400px] border-2 p-4 rounded-lg bg-black text-gray-800  ">
+      <div>
+      <div className="flex w-full items-center px-2 justify-between"><div className=""><img src={`http://openweathermap.org/img/w/${weatherData.icon}.png`} alt="Weather Icon" className=" inline-block w-[80px] h-[80px] text-center" /> 날씨 : {weatherData.weatherDescription}</div>
+      </div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]"><MdLocationCity  /></div> 도시 : {weatherData.name}</div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]"><SiUnitednations /></div> 국가 코드 : {weatherData.country}</div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]"><FaTemperatureHalf /></div>온도 : {weatherData.temperature}°C</div>
-              <div className="flex w-full items-center px-2 justify-between"><div className="w-[25px] h-[25px]"><img src={`http://openweathermap.org/img/w/${weatherData.icon}.png`} alt="Weather Icon" className=" inline-block w-[25px]  h-[25px] text-center" /></div>
+              
             
-           날씨 : {weatherData.weatherDescription}</div>
+           </div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]"><TbWorldLatitude /></div>위도 : {weatherData.latitude}</div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]"><TbWorldLongitude /></div>경도 : {weatherData.longitude}</div>
               <div className="flex w-full items-center px-2 justify-between"><div className="w-[20px] h-[20px]">< FaWind/></div>바람 속도 : {weatherData.windSpeed} m/s</div>
