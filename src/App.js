@@ -28,7 +28,6 @@ function App() {
         // 필요한 날씨 데이터만 추출
         const { name, main, weather, coord, wind, uv } = data;
         const temperatureInCelsius = Math.round((main.temp - 273.15) * 10) / 10;
-        
 
         setWeatherData({
           name,
@@ -95,70 +94,81 @@ function App() {
       <div className=" fixed top-0 w-full h-14 flex  justify-center items-center font-semibold text-2xl  bg-purple-700 z-20">
         세계 현재 날씨
       </div>
-      <div className=" bg-purple-600 w-full h-[100vh] flex justify-center items-center flex-col">
-        <div className="w-full h-[55px] mt-[150px] flex justify-center   text-white text-6xl font-bold">
-          {currentDate}
+      <div className=" bg-purple-600 w-full h-[100vh] flex justify-center items-center ">
+        <div className="w-[25%] flex justify-center  items-center">
+          <div className=" w-[300px] h-[600px] bg-slate-500">광고</div>
         </div>
-        <div className="w-full h-[85px] my-2 flex justify-center  text-white text-7xl font-bold">
-          {`${currentPeriod} ${currentTime}`}
-        </div>
+        <div className="w-[50%]">
+          <div className="w-full h-[55px] mt-[150px] flex justify-center  text-white text-6xl font-bold">
+            {currentDate}
+          </div>
+          <div className="w-full h-[85px] my-2 flex justify-center  text-white text-7xl font-bold">
+            {`${currentPeriod} ${currentTime}`}
+          </div>
 
-        <div className="flex justify-center items-center pb-2">
-          <input
-            className="w-[600px] h-[70px]  text-center text-4xl font-semibold rounded-lg"
-            placeholder="도시를 입력하세요.(seoul)"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            type="text"
-            onKeyDown={searchWeather}
-          />
-        </div>
+          <div className="flex justify-center items-center pb-2">
+            <input
+              className="w-[600px] h-[70px]  text-center text-4xl font-semibold rounded-lg"
+              placeholder="도시를 입력하세요.(seoul)"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              type="text"
+              onKeyDown={searchWeather}
+            />
+          </div>
 
-        <div className="w-full h-[330px] flex justify-center items-center">
-          {weatherData && (
-            <div className=" bg-white text-xl w-[600px] h-[330px] rounded-lg py-1">
-              <div className=" px-6 font-bold text-5xl flex justify-between items-center">
-                <div>
-                  <img
-                    src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
-                    alt="Weather Icon"
-                    className=" inline-block w-[65px] h-[65px] "
-                  />
-                  {weatherData.temperature}°
+          <div className="w-full h-[330px] flex justify-center items-center">
+            {weatherData && (
+              <div className=" bg-white text-xl w-[600px] h-[330px] rounded-lg py-1">
+                <div className=" px-6 font-bold text-5xl flex justify-between items-center">
+                  <div>
+                    <img
+                      src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
+                      alt="Weather Icon"
+                      className=" inline-block w-[65px] h-[65px] "
+                    />
+                    {weatherData.temperature}°
+                  </div>
+
+                  <div className="text-2xl py-6">{weatherData.name}</div>
                 </div>
-                
-                <div className="text-2xl py-6">{weatherData.name}</div>
-              </div>
-              <div className="px-6  text-2xl font-bold flex  justify-start pb-2">
-                {weatherData.weatherDescription}
-              </div>
-              
-              <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
-                <div>체감온도 :</div>
-                <div className="text-2xl">{weatherData.apparentTemperature}°</div>
-              </div>
-              <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
-                <div>적외선 지수 :</div>
-                <div className="text-2xl">{weatherData.uvIndex}</div>
-              </div>
-              <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
-                <div>습도 :</div>
-                <div className="text-2xl">{weatherData.humidity}%</div>
-              </div>
-              {/* <div className=" px-6 font-bold text-2xl flex justify-between items-center py-2">
+                <div className="px-6  text-2xl font-bold flex  justify-start pb-2">
+                  {weatherData.weatherDescription}
+                </div>
+
+                <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
+                  <div>체감온도 :</div>
+                  <div className="text-2xl">
+                    {weatherData.apparentTemperature}°
+                  </div>
+                </div>
+                <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
+                  <div>적외선 지수 :</div>
+                  <div className="text-2xl">{weatherData.uvIndex}</div>
+                </div>
+                <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
+                  <div>습도 :</div>
+                  <div className="text-2xl">{weatherData.humidity}%</div>
+                </div>
+                {/* <div className=" px-6 font-bold text-2xl flex justify-between items-center py-2">
                 <div>기압 :</div>
                 <div className="text-2xl">{weatherData.humidity}%</div>
               </div> */}
-              <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
-                <div>위도 :</div>
-                <div className="text-2xl">{weatherData.latitude}</div>
+                <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
+                  <div>위도 :</div>
+                  <div className="text-2xl">{weatherData.latitude}</div>
+                </div>
+                <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
+                  <div>경도 :</div>
+                  <div className="text-2xl">{weatherData.longitude}</div>
+                </div>
               </div>
-              <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
-                <div>경도 :</div>
-                <div className="text-2xl">{weatherData.longitude}</div>
-              </div>
-            </div>
-          )}
+            )}
+          </div>
+        </div>
+
+        <div className="w-[25%] flex justify-center items-center">
+          <div className=" w-[300px] h-[600px] bg-slate-500">광고</div>
         </div>
       </div>
 
