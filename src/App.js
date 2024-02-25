@@ -134,7 +134,7 @@ function App() {
 
           <div className="flex justify-center items-center pb-2">
             <input
-              className="w-[600px] h-[70px]  text-center text-4xl font-semibold rounded-lg"
+              className="w-[600px] h-[70px] mt-3  text-center text-4xl font-semibold rounded-lg"
               placeholder="도시를 입력하세요."
               value={location}
               onChange={(e) => setLocation(e.target.value)}
