@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import Banner from "./routes/Banner"
 import App from "./App";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,6 +9,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "banner",
+    element: <Banner />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
