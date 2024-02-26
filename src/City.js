@@ -18,7 +18,6 @@ const City = (koreanCity) => {
     상주시: "Sangju",
     성주군: "Seongju",
     안동: "Andong",
-
     충청북도: "Chungcheongbuk-do",
     충청남도: "Chungcheongnam-do",
     전라북도: "Jeollabuk-do",
@@ -57,6 +56,7 @@ const City = (koreanCity) => {
     이스탄불: "Istanbul",
     마드리드: "Madrid",
     베네치아: "Venice",
+    호주: "Australia",
     아테네: "Athens",
     리스본: "Lisbon",
     상크리스토발: "Santiago",
