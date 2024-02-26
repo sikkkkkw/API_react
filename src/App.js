@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Tawk from "./Tawk";
 import axios from "axios";
 import WeatherDescKo from "./WeatherDescKo";
-import City from "./City"
+import City from "./City";
 import { Link } from "react-router-dom";
 
 // import {Morning} from "./images/Morning.png";
@@ -22,16 +22,12 @@ function App() {
   const [currentTime, setCurrentTime] = useState("");
   // const [currentPeriod, setCurrentPeriod] = useState("");
 
-
-  
-  
   const searchWeather = async (e) => {
-    
     if (e.key === "Enter") {
       try {
         const englishLocation = City(location);
 
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${englishLocation}&appid=${REACT_API_KEY}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${englishLocation}&appid=${REACT_API_KEY}`;
         const { data } = await axios.get(url);
 
         // 필요한 날씨 데이터만 추출
@@ -114,16 +110,15 @@ function App() {
   return (
     <>
       <div className=" fixed top-0 w-full h-14 flex  justify-center items-center font-semibold text-2xl  bg-purple-700 z-20">
-        세계 현재 날씨
+        세계 날씨 사이트
       </div>
       <div className=" bg-purple-600 w-full h-[100vh] flex justify-center items-center ">
-        
-          <div className="w-[25%] flex justify-center  items-center">
+        <div className="w-[25%] flex justify-center  items-center">
           <Link to={"/Banner"}>
             <div className=" w-[200px] h-[400px] bg-slate-500">광고</div>
           </Link>
-          </div>
-        
+        </div>
+
         <div className="w-[50%]">
           <div className="w-full h-[55px] mt-[150px] flex justify-center  text-white text-7xl font-bold">
             {currentDate}
@@ -156,7 +151,9 @@ function App() {
                     {weatherData.temperature}°
                   </div>
 
-                  <div className="text-2xl py-6">{weatherData.name}</div>
+                  <div className="text-2xl uppercase py-6">
+                    {weatherData.name}
+                  </div>
                 </div>
                 <div className="px-6  text-2xl font-bold flex  justify-start pb-2">
                   {weatherData.weatherDescription}
@@ -178,7 +175,9 @@ function App() {
                 </div>
                 <div className=" px-6 font-bold text-2xl flex justify-between items-center pb-2">
                   <div>강수량 :</div>
-                  <div className="text-2xl">{categorizeRainfall(weatherData.rainfall)}</div>
+                  <div className="text-2xl">
+                    {categorizeRainfall(weatherData.rainfall)}
+                  </div>
                 </div>
                 {/* <div className=" px-6 font-bold text-2xl flex justify-between items-center py-2">
                 <div>기압 :</div>
@@ -194,9 +193,9 @@ function App() {
         </div>
 
         <div className="w-[25%] flex justify-center items-center">
-        <Link to={"/Banner"}>
-          <div className=" w-[200px] h-[400px] bg-slate-500">광고</div>
-        </Link>
+          <Link to={"/Banner"}>
+            <div className=" w-[200px] h-[400px] bg-slate-500">광고</div>
+          </Link>
         </div>
       </div>
 
